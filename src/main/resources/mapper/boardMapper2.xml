@@ -14,7 +14,9 @@
         0,
         sysdate
         )
-
+        <selectKey keyProperty="num" resultType="int" order="BEFORE">
+            select nvl(num,0) + 1 from board
+        </selectKey>
     </insert>
     <update id="updateBoard">
       update board set
@@ -29,12 +31,16 @@
     </update>
     <delete id="deleteBoard">
         delete from board where num=#{num}
-
     </delete>
 
 
     <select id="selectBoard" resultType="com.myspring.lim101.utils.PubMap">
         select NUM,PASS,NAME,EMAIL,TITLE,CONTENT,READCOUNT,WRITEDATE
         from board
+    </select>
+    <select id="selectBoardByNum" resultType="com.myspring.lim101.utils.PubMap">
+        select NUM,PASS,NAME,EMAIL,TITLE,CONTENT,READCOUNT,WRITEDATE
+        from board
+        where num=#{num}
     </select>
 </mapper>

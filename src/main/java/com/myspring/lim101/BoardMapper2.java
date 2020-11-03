@@ -13,4 +13,6 @@ public interface BoardMapper2 {
 
     int deleteBoard(int num);
 
+    PubMap selectBoardByNum(String num);
+
 }
