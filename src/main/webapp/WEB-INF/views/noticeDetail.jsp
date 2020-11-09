@@ -57,8 +57,26 @@
             </td>
         </tr>
     </table>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script>
         $(document).ready(function () {
+
+
+            $('[name="btnDelete"]').on('click', function() {
+                // 삭제
+                var obj = {
+                    "num": $('[name="num"]').val()
+                }
+                $.ajax({
+                    type: "delete",
+                    url: "notiece/" + obj.num + ".json",
+                    success: function (response) {
+                        debugger
+                    }, error: function(err) {
+                        debugger
+                    }
+                });
+            });
 
             $('[name="btnSave"]').on('click', function() {
 

@@ -16,43 +16,12 @@
     <ul class="noticeList">
         <li></li>
     </ul>
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script>
         $(document).ready(function () {
 
             list();
 
-            $('[name="btnDelete"]').on('click', function() {
-                // 삭제
-                var obj = {
-                    "num": 1
-                }
-                $.ajax({
-                    type: "delete",
-                    url: "notiece/" + obj.num + ".json",
-                    success: function (response) {
-                        debugger
-                    }, error: function(err) {
-                        debugger
-                    }
-                });
-            });
-
-            $('[name="btnDetail"]').on('click', function() {
-                // 수정 
-                var obj = {
-                    "num": 1
-                }
-                $.ajax({
-                    type: "delete",
-                    url: "notiece/" + obj.num + ".json",
-                    success: function (response) {
-                        debugger
-                    }, error: function(err) {
-                        debugger
-                    }
-                });
-            });
 
             $('[name="btnNew"]').on('click', function() {
                 window.open('noticeDetail.do','noticeNew','width=800,height=700');
